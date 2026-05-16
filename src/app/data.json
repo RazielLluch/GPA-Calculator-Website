@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "code": "CSC145",
+        "name": "Programming Languages",
+        "units": 3,
+        "grade": "2.5"
+    },
+    {
+        "id": 2,
+        "code": "CSC712",
+        "name": "Data Mining and Analysis",
+        "units": 3,
+        "grade": "INC"
+    },
+    {
+        "id": 3,
+        "code": "CSC173",
+        "name": "Intelligent Systems",
+        "units": 3,
+        "grade": "1.75"
+    },
+    {
+        "id": 4,
+        "code": "CSC193",
+        "name": "Special Topics in Computer Science",
+        "units": 3,
+        "grade": "INC"
+    },
+    {
+        "id": 5,
+        "code": "CSC198",
+        "name": "Research Methods",
+        "units": 3,
+        "grade": "1.25"
+    },
+    {
+        "id": 6,
+        "code": "STT101",
+        "name": "Descriptive and Inferential Statistics",
+        "units": 4,
+        "grade": "3.0"
+    }
+]
