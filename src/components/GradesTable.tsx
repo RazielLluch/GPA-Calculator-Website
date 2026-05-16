@@ -38,7 +38,7 @@ export const columns: ColumnDef<Course>[] = [
     header: "Course Name",
     cell: ({ row }) => {
       return (
-        <div className="max-w-[120px] truncate sm:max-w-[250px] font-medium">
+        <div className="max-w-30 truncate sm:max-w-62.5 font-medium">
           {row.original.name}
         </div>
       );
@@ -47,6 +47,17 @@ export const columns: ColumnDef<Course>[] = [
   {
     accessorKey: "units",
     header: "Units",
+    cell: ({ row }) => {
+      return (
+          <Badge
+              className="w-9 justify-center bg-blue-500 text-white"
+          >
+            <strong>
+              {row.original.units}
+            </strong>
+          </Badge>
+      );
+    },
   },
   {
     accessorKey: "grade",
@@ -100,10 +111,12 @@ export const columns: ColumnDef<Course>[] = [
 // ======================
 
 interface CourseDataTableProps {
+  className?: string;
   data: Course[];
 }
 
 export function CourseDataTable({
+                                  className,
                                   data,
                                 }: CourseDataTableProps) {
   const table = useReactTable({
@@ -113,10 +126,10 @@ export function CourseDataTable({
   });
   
   return (
-    <div className="space-y-4">
+    <div className={cn("space-y-4", className)}>
       <div className="rounded-md border">
         <Table>
-          <TableHeader>
+          <TableHeader className="sticky top-0 z-10 bg-muted">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
@@ -133,7 +146,7 @@ export function CourseDataTable({
             ))}
           </TableHeader>
           
-          <TableBody>
+          <TableBody className="">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow

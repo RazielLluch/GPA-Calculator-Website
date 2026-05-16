@@ -1,7 +1,7 @@
 import { AppSidebar } from "@/components/app-sidebar"
 import { SiteHeader } from "@/components/site-header"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
-import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import * as React from "react";
 
 import data from "./data.json"
@@ -26,7 +26,7 @@ export default function Page() {
                         <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
                             <div className="px-4 lg:px-6">
                                 <Card className="@container/card">
-                                    <CardHeader>
+                                    <CardHeader className="">
                                         <CardTitle>Courses</CardTitle>
                                         <CardDescription>
                                         <span className="hidden @[540px]/card:block">
@@ -34,8 +34,10 @@ export default function Page() {
                                         </span>
                                             <span className="@[540px]/card:hidden">semester</span>
                                         </CardDescription>
-                                        <CourseDataTable data={data as Course}/>
                                     </CardHeader>
+                                    <CardContent>
+                                        <CourseDataTable data={data as Course}/>
+                                    </CardContent>
                                 </Card>
                             </div>
                         </div>
