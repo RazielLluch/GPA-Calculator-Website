@@ -1,3 +1,5 @@
+"use client"
+
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {CourseDataTable} from "@/components/GradesTable";
 import {Course} from "@/schemas/schemas";

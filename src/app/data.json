@@ -1,44 +1,58 @@
 [
     {
         "id": 1,
-        "code": "CSC145",
-        "name": "Programming Languages",
+        "code": "CCC100",
+        "name": "Fundamentals of Computing",
         "units": 3,
-        "grade": "2.5"
+        "grade": "1.5"
     },
     {
         "id": 2,
-        "code": "CSC712",
-        "name": "Data Mining and Analysis",
+        "code": "CCC101",
+        "name": "Computer Programming 1",
         "units": 3,
-        "grade": "INC"
+        "grade": "1.25"
     },
     {
         "id": 3,
-        "code": "CSC173",
-        "name": "Intelligent Systems",
+        "code": "GEC101",
+        "name": "Understanding the Self",
         "units": 3,
-        "grade": "1.75"
+        "grade": "1.5"
     },
     {
         "id": 4,
-        "code": "CSC193",
-        "name": "Special Topics in Computer Science",
+        "code": "GEC102",
+        "name": "Purposive Communication",
         "units": 3,
-        "grade": "INC"
+        "grade": "1.0"
     },
     {
         "id": 5,
-        "code": "CSC198",
-        "name": "Research Methods",
+        "code": "GEC104",
+        "name": "Mathematics in the Modern World",
         "units": 3,
         "grade": "1.25"
     },
     {
         "id": 6,
-        "code": "STT101",
-        "name": "Descriptive and Inferential Statistics",
-        "units": 4,
-        "grade": "3.0"
+        "code": "MAT104",
+        "name": "Discrete Structure",
+        "units": 3,
+        "grade": "2.25"
+    },
+    {
+        "id": 7,
+        "code": "NST001",
+        "name": "National Service Training Program 1",
+        "units": 3,
+        "grade": "1.25"
+    },
+    {
+        "id": 8,
+        "code": "PED011",
+        "name": "Movement Competency Training or MCT",
+        "units": 2,
+        "grade": "1.25"
     }
 ]
