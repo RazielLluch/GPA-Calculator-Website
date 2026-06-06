@@ -1,20 +1,20 @@
 import * as z from "zod";
 
 export const CollegeSchema = z.object({
-  id: crypto.randomUUID(),
+  id: z.string(),
   code: z.string().max(15, {message: "College Code is too long"}),
   name: z.string(),
 })
 
 export const ProgramSchema = z.object({
-  id: crypto.randomUUID(),
+  id: z.string(),
   code: z.string().max(15, {message: "Program Code is too long"}),
   name: z.string(),
   department: CollegeSchema,
 })
 
 export const StudentSchema = z.object({
-  id: crypto.randomUUID(),
+  id: z.string(),
   firstName: z.string(),
   middleName: z.string(),
   lastName: z.string(),
@@ -42,7 +42,7 @@ export const GradeSchema = z.enum([
 ]);
 
 export const CourseSchema = z.object({
-  id: crypto.randomUUID(),
+  id: z.string(),
   code: z.string().max(15, {
     message: "Course Code is too long",
   }),
@@ -54,7 +54,7 @@ export const CourseSchema = z.object({
 });
 
 export const SemesterSchema = z.object({
-  id: z.string().uuid(),
+  id: z.string(),
   term: z.enum(["1", "2", "Summer"]),   // adjust to your school's terms
   schoolYear: z.string().regex(/^\d{4}-\d{4}$/, "Use format 2025-2026"),
   courses: z.array(CourseSchema),
@@ -66,6 +66,14 @@ export type Student = z.infer<typeof StudentSchema>;
 export type Program = z.infer<typeof ProgramSchema>;
 export type Course = z.infer<typeof CourseSchema>;
 export type Grade = z.infer<typeof GradeSchema>;
+
+export const AcademicRecordSchema = z.object({
+  semesters: z.array(SemesterSchema),
+});
+export type AcademicRecord = z.infer<typeof AcademicRecordSchema>;
+
+export const CourseFormSchema = CourseSchema.omit({ id: true });
+export type CourseFormValues = z.infer<typeof CourseFormSchema>;
 
 const gradePointMap: Partial<Record<Grade, number>> = {
   "1.0": 1.0,
