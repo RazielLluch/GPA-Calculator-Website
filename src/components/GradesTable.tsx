@@ -70,7 +70,7 @@ function getColumns(
       accessorKey: "name",
       header: "Course Name",
       cell: ({ row }) => (
-        <div className="max-w-[7.5rem] truncate font-medium sm:max-w-[15.625rem]">
+        <div className="max-w-30 truncate font-medium sm:max-w-62.5">
           {row.original.name}
         </div>
       ),
